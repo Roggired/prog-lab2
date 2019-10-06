@@ -1,0 +1,10 @@
+{
+    "Name": "'Еще одна розовая кучка'",
+    "HP": "250",
+    "Attack": "5",
+    "Defense": "5", 
+    "SpecialAttack": "35",
+    "SpecialDefense": "105",
+    "Speed": "50",
+    "Level": "10"
+}

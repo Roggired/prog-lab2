@@ -1,0 +1,10 @@
+{
+    "Name": "'Счастье, потерянное на вт'",
+    "HP": "100",
+    "Attack": "5",
+    "Defense": "5", 
+    "SpecialAttack": "15",
+    "SpecialDefense": "65",
+    "Speed": "30",
+    "Level": "10"
+}

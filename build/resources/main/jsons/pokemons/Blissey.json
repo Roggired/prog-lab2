@@ -1,0 +1,10 @@
+{
+    "Name": "'Кто-нибудь различает этих розовых?'",
+    "HP": "255",
+    "Attack": "10",
+    "Defense": "10", 
+    "SpecialAttack": "75",
+    "SpecialDefense": "135",
+    "Speed": "55",
+    "Level": "10"
+}

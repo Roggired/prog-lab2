@@ -1,0 +1,40 @@
+plugins {
+    id 'groovy'
+    id 'java'
+    id 'application'
+}
+
+group 'ru.roggi'
+version '0.1.0-alpha'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile 'org.codehaus.groovy:groovy-all:2.3.11'
+    implementation 'com.googlecode.json-simple:json-simple:1.1.1'
+
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+
+    compile files('libs/Sound.jar')
+    compile files('libs/Pokemon.jar')
+
+    testCompile files('libs/Sound.jar')
+    testCompile files('libs/Pokemon.jar')
+}
+
+application {
+    compileJava.options.encoding = 'UTF-8'
+    javadoc.options.encoding = 'UTF-8'
+    run.standardInput = System.in
+
+    mainClassName = 'app.App'
+}
+
+build {
+    compileJava.options.encoding = 'UTF-8'
+    javadoc.options.encoding = 'UTF-8'
+}
