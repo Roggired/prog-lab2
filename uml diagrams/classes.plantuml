@@ -1,0 +1,65 @@
+@startuml
+top to bottom direction
+skinparam headerFontSize 30
+skinparam headerFontStyle bold
+skinparam classAttributeIconSize 0
+scale 1.0
+package app {
+class app.App {
+.. Fields  ..
+.. Methods ..
+.. Static ..
++ {static} main() : void
+- {static} GREETINGS : String
+- {static} STUDENT_NAME : String
+}
+
+}
+package lab.eventSystem {
+interface lab.eventSystem.IObserver  {
+.. Methods ..
++ {abstract} notify(Event) : void
+}
+class lab.eventSystem.Event {
+}
+class lab.eventSystem.EventSystem {
+.. Fields  ..
+.. Methods ..
++newEvent() : void
++subscribe(IObserver) : void
++unsubscribe(IObserver) : void
+.. Static ..
++ {static} getSingleton() : EventSystem
+- {static} observers : List
+- {static} singleton : EventSystem
+}
+
+}
+package lab.participant {
+class lab.participant.Participant {
+.. Fields  ..
+-commonPhrases : List
+-name : String
+-specialPhrases : List
+.. Methods ..
+-getLastPhrase() : String
+-getLastSpecialPhrase() : String
++getName() : String
+-havePhrase() : Boolean
+-removeLastPhrase() : void
++say(PrintStream) : void
++saySpecial(PrintStream) : void
++wasLastPhrase() : Boolean
+}
+
+}
+lab.eventSystem.IObserver <|.. lab.battleService.BattleService
+lab.labAcceptingService.LabAcceptingService.SpecialSayTask *-- "0..*" lab.participant.Participant
+lab.labAcceptingService.LabAcceptingService.SpecialSayTask o-- "1..1" lab.participant.Participant
+effects.IEffect <|.. effects.OneTurnEffect
+lab.labAcceptingService.LabAcceptingService.SayTask *-- "0..*" lab.participant.Participant
+lab.labAcceptingService.LabAcceptingService.SayTask o-- "1..1" lab.participant.Participant
+lab.eventSystem.IObserver <|.. lab.labAcceptingService.LabAcceptingService
+lab.eventSystem.EventSystem *-- "0..*" lab.eventSystem.IObserver
+effects.IEffect <|.. effects.MultiTurnEffect
+@enduml

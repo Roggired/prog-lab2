@@ -1,0 +1,10 @@
+{
+    "Name": "'Он правда круглый?'",
+    "HP": "40",
+    "Attack": "40",
+    "Defense": "55", 
+    "SpecialAttack": "40",
+    "SpecialDefense": "70",
+    "Speed": "55",
+    "Level": "10"
+}
