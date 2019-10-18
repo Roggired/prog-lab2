@@ -10,5 +10,5 @@ public interface IEffect {
      * Метод, отвечающий за применения эффекта к данному покемону
      * @param pokemon цель эффекта
      */
-    public void apply(Pokemon pokemon);
+    void apply(Pokemon pokemon);
 }

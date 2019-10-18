@@ -17,20 +17,6 @@ import ru.ifmo.se.pokemon.Pokemon;
  * создает данные сервисы, используя dependency injection
  */
 public final class Lab {
-    private final List<String> POKEMONS_SHORT_CLASS_NAMES = new ArrayList<String>() {
-        private static final long serialVersionUID = 4271875362570551157L;
-
-        {
-            add("Happiny");
-            add("Comfey");
-            add("Claydol");
-            add("Chansey");
-            add("Blissey");
-            add("Baltoy");
-        }
-    };
-    
-    private Battle battle;
     private BattleService battleService;
 
     private LabAcceptingService labAcceptingService;
@@ -57,30 +43,10 @@ public final class Lab {
         labAcceptingService = new LabAcceptingService(participants);
     }
     private void createBattleService() {
-        List<Pokemon> pokemons = createPokemons();
-
-        battle = new Battle();
-        splitPokemonsInTwoCommands(battle, pokemons);
-
+        Battle battle = new Battle();
         battleService = new BattleService(battle);
     }
-    private List<Pokemon> createPokemons() {
-        List<Pokemon> pokemons = new ArrayList<Pokemon>();
-        POKEMONS_SHORT_CLASS_NAMES.forEach(shortClassName -> {
-            pokemons.add(PokemonFactory.create(shortClassName));
-        });
 
-        return pokemons;
-    }
-    private void splitPokemonsInTwoCommands(Battle battle, List<Pokemon> pokemons) {
-        pokemons.forEach(pokemon -> {
-            if (pokemons.indexOf(pokemon) < pokemons.size() / 2) {
-                battle.addAlly(pokemon);
-            } else {
-                battle.addFoe(pokemon);
-            }
-        });
-    }
     private void subscribeServicesToEventSystem() {
         EventSystem.getSingleton().subscribe(labAcceptingService);
         EventSystem.getSingleton().subscribe(battleService);

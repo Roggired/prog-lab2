@@ -9,5 +9,5 @@ public interface IObserver {
      * Уведомить о наступившем событии.
      * @param event событие.
      */
-    public void notify(Event event);
+    void notify(Event event);
 }

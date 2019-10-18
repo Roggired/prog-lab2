@@ -8,7 +8,7 @@ import ru.ifmo.se.pokemon.Stat;
  * OneTurnEffect реализует создание эффекта, изменяющего данный показатель
  * одной из характеристик покемона-цели на ровно 1 один ход
  */
-public class OneTurnEffect implements IEffect {
+public class    OneTurnEffect implements IEffect {
     private Effect nativeEffect;
 
 

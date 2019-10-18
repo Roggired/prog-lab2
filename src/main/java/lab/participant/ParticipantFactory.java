@@ -32,7 +32,7 @@ public class ParticipantFactory {
                                                FILE_CHARSET);
 
         return new Participant(participantName, 
-                               createComonPhrases(root, participantName),
+                               createCommonPhrases(root, participantName),
                                createSpecialPhrases(root, participantName));
     }
     private static String getFileName(String participantName) {
@@ -51,7 +51,7 @@ public class ParticipantFactory {
 
         return "normalValidator";
     }
-    private static List<String> createComonPhrases(JSONObject root, String participantName) {
+    private static List<String> createCommonPhrases(JSONObject root, String participantName) {
         JSONObject commonPhrases = (JSONObject) root.get("commonPhrases");
         return createPhraseList(commonPhrases, participantName);
     }
