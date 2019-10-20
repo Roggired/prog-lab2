@@ -26,7 +26,7 @@ public class ParticipantFactory {
      * @return участник.
      */
     public static Participant create(String participantName) {
-        JSONObject root = JSONParser.parseFile(PATH_TO_JSON_DIRECTORY 
+            JSONObject root = JSONParser.parseFile(PATH_TO_JSON_DIRECTORY
                                              + getFileName(participantName) 
                                              + JSON_EXTENSION, 
                                                FILE_CHARSET);

@@ -24,11 +24,6 @@ public class JSONParser {
 
         JSONObject root = null;
         try {
-            /*BufferedReader reader = new BufferedReader(
-                                        new InputStreamReader(
-                                           new FileInputStream(
-                                               new File(JSONParser.class.getClassLoader().getResourceAsStream(fileName))),
-                                       charset));*/
             BufferedReader reader = new BufferedReader(
                                         new InputStreamReader(JSONParser.class.getClassLoader().getResourceAsStream(fileName), charset));
 
