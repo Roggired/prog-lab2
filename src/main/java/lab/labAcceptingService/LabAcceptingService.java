@@ -63,7 +63,9 @@ public final class LabAcceptingService implements IObserver {
 
 
     private void stop() {
-        sound.stop();
+        if (sound != null) {
+            sound.stop();
+        }
         timer.cancel();
     }
 

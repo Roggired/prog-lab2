@@ -22,7 +22,7 @@ dependencies {
     compile files('libs/Sound.jar')
     compile files('libs/Pokemon.jar')
 
-    execJar 'com.googlecode.json-simple:json-simple:1.1.1'
+    execJar files('libs/json-simple-1.1.1.jar')
 
     execJar files('libs/Sound.jar')
     execJar files('libs/Pokemon.jar')

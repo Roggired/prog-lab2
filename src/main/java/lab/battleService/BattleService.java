@@ -76,7 +76,7 @@ public final class BattleService implements IObserver {
 
     private void start() {
         System.out.println();
-        SoundAdapter.playSound(POKEMON_BATTLE_MUSIC);
+        //SoundAdapter.playSound(POKEMON_BATTLE_MUSIC);
         battle.go();
     }
 }
